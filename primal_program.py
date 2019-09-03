@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from cvxopt import matrix
 from cvxopt import solvers
 
@@ -17,6 +18,13 @@ zeros=matrix(np.zeros((3,1)),tc='d')
 sol = solvers.qp(H,zeros,A,C)
 print(sol['primal objective'])
 print(sol['x'])
+
+
+plt.plot(var_1_numpy[0:6],var_2_numpy[0:6],"bo",color="red")
+plt.plot(var_1_numpy[6:],var_2_numpy[6:],"bo",color="green")
+plt.show()
+
+
 
 
 
