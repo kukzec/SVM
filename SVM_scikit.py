@@ -42,15 +42,13 @@ def plot_contours(ax, clf, xx, yy, **params):
     return out
 
 
-
-
 X= np.transpose(np.array([[4,2,4,6,8,6,12,10,8,6],[8,4,6,6,8,10,6,6,2,2]]))
 y = np.array([-1,-1,-1,-1,-1,-1,1,1,1,1])
 
 
 # we create an instance of SVM and fit out data. We do not scale our
 # data since we want to plot the support vectors
-C = 1.0  # SVM regularization parameter
+C = 1  # SVM regularization parameter
 models = (svm.SVC(kernel='linear', C=C),
           svm.LinearSVC(C=C, max_iter=10000),
           svm.SVC(kernel='rbf', gamma=0.7, C=C),
