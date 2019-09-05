@@ -9,7 +9,7 @@ var_2_numpy = np.array([8,4,6,6,8,10,6,6,2,2])
 y_numpy = np.array([-1,-1,-1,-1,-1,-1,1,1,1,1])
 
 H = matrix(np.array([[1,0,0],[0,1,0],[0,0,0]]),tc='d')
-C = -matrix(np.array([1,1,1,1,1,1,1,1,1,1]),tc='d')
+C = -matrix(np.ones((10,1)),tc='d')
 test_1 = np.multiply(var_1_numpy,y_numpy)
 test_2 = np.multiply(var_2_numpy,y_numpy)
 A = matrix(np.concatenate((test_1.reshape(-1,1),test_2.reshape(-1,1),y_numpy.reshape(-1,1)), axis = 1),tc='d')
@@ -22,6 +22,7 @@ print(sol['x'])
 
 plt.plot(var_1_numpy[0:6],var_2_numpy[0:6],"bo",color="red")
 plt.plot(var_1_numpy[6:],var_2_numpy[6:],"bo",color="green")
+plt.title("Répartition des points")
 plt.show()
 
 
